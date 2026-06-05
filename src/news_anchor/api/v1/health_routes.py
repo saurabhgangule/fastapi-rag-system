@@ -1,11 +1,10 @@
 from fastapi import APIRouter
 
-
 router = APIRouter()
 
-@router.get('/')
+
+@router.get("/")
 def get_health():
-    """ Health check """
+    """Health check"""
 
     return {"data": "Healthy"}
-

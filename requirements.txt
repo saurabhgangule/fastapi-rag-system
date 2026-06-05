@@ -30,3 +30,5 @@ aiosqlite
 bs4
 feedparser
 groq
+edge-tts
+pyjwt

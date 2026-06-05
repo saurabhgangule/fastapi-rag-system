@@ -2,6 +2,7 @@
 __pycache__/
 .env
 .pytest_cache/
-celerybeat-schedule.*
 */__pycache__/
 scripts/
+*.wav
+test.py

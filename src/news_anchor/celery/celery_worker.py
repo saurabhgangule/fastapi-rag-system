@@ -1,6 +1,8 @@
-from celery import Celery
 import os
+
+from celery import Celery
 from dotenv import load_dotenv
+
 load_dotenv()
 
 celery = Celery(
@@ -11,9 +13,11 @@ celery = Celery(
 
 celery.conf.timezone = "UTC"
 
-celery.autodiscover_tasks([
-    "news_anchor.celery.tasks",
-])
+celery.autodiscover_tasks(
+    [
+        "news_anchor.celery.tasks",
+    ]
+)
 
 
 # import news_anchor.celery.tasks.rss_tasks
@@ -26,6 +30,7 @@ celery.autodiscover_tasks([
 
 import news_anchor.celery.tasks.broadcast_tasks
 import news_anchor.celery.tasks.convertion_tasks
+
 celery.conf.beat_schedule = {
     # "broadcast-news-every-1-minute": {
     #     "task": "news_anchor.celery.tasks.broadcast_tasks.broadcast_news",

@@ -1,7 +1,9 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+
 from .base import Base
 
-class Broadcast(Base): 
+
+class Broadcast(Base):
     __tablename__ = "broadcasts"
 
     id = Column(Integer, primary_key=True, autoincrement=True)

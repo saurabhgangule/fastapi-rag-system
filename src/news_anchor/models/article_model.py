@@ -1,8 +1,11 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from datetime import datetime
+
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+
 from .base import Base
 
-class Article(Base): 
+
+class Article(Base):
     __tablename__ = "articles"
 
     id = Column(Integer, primary_key=True, autoincrement=True)

@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
+
 from news_anchor.repositories.articles_repository import ArticlesRepository
 from news_anchor.schemas.articles_schema import AddArticleSchema
+
 
 class ArticlesService:
 
@@ -8,7 +10,9 @@ class ArticlesService:
         self.articles_repository = ArticlesRepository(db)
 
     def add_article(self, article_data: AddArticleSchema):
-        existing_article = self.articles_repository.get_article_by_link(article_data.link)
+        existing_article = self.articles_repository.get_article_by_link(
+            article_data.link
+        )
 
         if existing_article:
             return True
